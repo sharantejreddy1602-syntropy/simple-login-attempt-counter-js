@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About This Page – VIT Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="about.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <img src="Images/logo.webp" alt="VIT Logo" class="logo-img"/>
+    </div>
+    <div class="header-right">
+      <a href="index.html" class="home-btn">&larr; Back to Login</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-hero">
+      <p class="section-eyebrow">Technical Documentation</p>
+      <h1 class="section-title">How the Login Page Was Built</h1>
+      <p class="section-sub">
+        A detailed breakdown of every HTML element, CSS property, and JavaScript concept
+        used to construct the VIT Student Portal login page.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="info-card">
+        <div class="card-icon">&#60;/&#62;</div>
+        <h2 class="card-title">HTML Structure</h2>
+        <div class="card-body">
+          <div class="info-block">
+            <span class="info-label">DOCTYPE &amp; meta tags</span>
+            <p class="info-text">
+              <code>&lt;!DOCTYPE html&gt;</code> declares the document as HTML5.
+              <code>&lt;meta charset="UTF-8"&gt;</code> sets character encoding and
+              <code>&lt;meta name="viewport"&gt;</code> enables responsive scaling on mobile devices.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">&lt;header&gt; element</span>
+            <p class="info-text">
+              The sticky navigation bar uses a semantic <code>&lt;header&gt;</code> tag
+              with an <code>&lt;img&gt;</code> for the VIT logo and a <code>&lt;span&gt;</code>
+              for the portal name. Flexbox positions them side by side.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">&lt;input&gt; elements</span>
+            <p class="info-text">
+              <code>type="text"</code> for the username field and
+              <code>type="password"</code> for the password field. The <code>onkeydown</code>
+              attribute captures the Enter key to trigger login. <code>placeholder</code>
+              provides hint text inside each field.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">&lt;button&gt; element</span>
+            <p class="info-text">
+              The Sign In button uses <code>onclick</code>, <code>onmouseover</code>, and
+              <code>onmouseout</code> inline event attributes. The <code>id="loginBtn"</code>
+              attribute allows JavaScript to access and disable it via the DOM.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Semantic layout tags</span>
+            <p class="info-text">
+              <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, and <code>&lt;header&gt;</code>
+              are used for semantic structure. <code>&lt;label&gt;</code> tags with <code>for</code>
+              attributes are linked to each input for accessibility.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="card-icon">&#35;</div>
+        <h2 class="card-title">CSS Properties Used</h2>
+        <div class="card-body">
+          <div class="info-block">
+            <span class="info-label">CSS Custom Properties (Variables)</span>
+            <p class="info-text">
+              All colours are defined in <code>:root</code> using <code>var(--name)</code> syntax —
+              e.g. <code>--sage-dark: #3d5a47</code>. This keeps the theme consistent
+              and easy to change globally.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Flexbox Layout</span>
+            <p class="info-text">
+              <code>display: flex</code>, <code>flex-direction: column</code>,
+              <code>align-items: center</code>, and <code>justify-content: center</code>
+              are used throughout to centre the login box and align header elements.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">backdrop-filter &amp; opacity</span>
+            <p class="info-text">
+              The sticky header uses <code>backdrop-filter: blur(12px)</code> with a
+              semi-transparent <code>background: rgba(247,244,239,0.92)</code> to create
+              a frosted glass effect while scrolling.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Transitions &amp; box-shadow</span>
+            <p class="info-text">
+              All interactive elements use <code>transition: background 0.22s, transform 0.18s</code>.
+              The login box uses <code>box-shadow: 0 4px 20px rgba(0,0,0,0.07)</code>
+              for depth. The button lifts with <code>transform: translateY(-2px)</code> on hover.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">radial-gradient background</span>
+            <p class="info-text">
+              The page background uses layered <code>radial-gradient</code> and
+              <code>linear-gradient</code> on a <code>position: fixed</code> pseudo-element
+              (<code>body::before</code>) to create a soft ambient glow effect without
+              affecting layout.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">position: sticky &amp; z-index</span>
+            <p class="info-text">
+              The header stays visible during scroll using <code>position: sticky; top: 0</code>
+              combined with <code>z-index: 100</code> to always render above page content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="card-icon">JS</div>
+        <h2 class="card-title">JavaScript Concepts</h2>
+        <div class="card-body">
+          <div class="info-block">
+            <span class="info-label">Variables</span>
+            <p class="info-text">
+              <code>var CORRECT_USER</code>, <code>var CORRECT_PASS</code>,
+              <code>var MAX_ATTEMPTS = 3</code>, and <code>var attemptsLeft</code>
+              store the credentials and track remaining login tries.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">if / else Conditions</span>
+            <p class="info-text">
+              Conditions check whether fields are empty, whether credentials match,
+              and whether <code>attemptsLeft &lt;= 0</code>. Each branch produces
+              a different user-visible outcome (error message, lock, or redirect).
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">onclick Event Handler</span>
+            <p class="info-text">
+              The Sign In button calls <code>attemptLogin()</code> via <code>onclick</code>.
+              The same function is also triggered by the Enter key using
+              <code>onkeydown="if(event.key==='Enter') attemptLogin()"</code> on both inputs.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">DOM Methods</span>
+            <p class="info-text">
+              <code>document.getElementById()</code> retrieves elements by ID.
+              <code>element.value</code> reads field values.
+              <code>element.textContent</code> writes error messages dynamically.
+              <code>element.className</code> switches CSS classes for styled alert boxes.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">Disabling Button via DOM</span>
+            <p class="info-text">
+              After 3 failed attempts, <code>document.getElementById("loginBtn").disabled = true</code>
+              prevents further submissions. Both inputs are also disabled via
+              <code>element.disabled = true</code> to lock the entire form.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">focus() Method</span>
+            <p class="info-text">
+              <code>element.focus()</code> is called on the first invalid field,
+              directing the user's cursor to the problematic input automatically
+              without requiring manual click.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">window.location.href (Redirect)</span>
+            <p class="info-text">
+              On successful login, <code>window.location.href = "about.html"</code>
+              inside a <code>setTimeout()</code> delay of 1 second navigates the
+              user to this about page after a brief confirmation message.
+            </p>
+          </div>
+          <div class="info-block">
+            <span class="info-label">for Loop &amp; innerHTML</span>
+            <p class="info-text">
+              The attempt indicator dots are generated using a <code>for</code> loop
+              that builds an HTML string and sets it via <code>element.innerHTML</code>.
+              Used dots get the class <code>"used"</code> to turn red visually.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card fun-card">
+        <div class="card-icon">&#9998;</div>
+        <h2 class="card-title">Security Logic Summary</h2>
+        <div class="card-body">
+          <div class="fun-fact-block">
+            <p class="info-text">
+              The login system enforces a hard limit of <strong>3 attempts</strong>.
+              On each failed try, <code>attemptsLeft</code> is decremented and the dot
+              indicators update. When it reaches zero, both the button and inputs are
+              disabled via JavaScript DOM manipulation — no page reload required.
+              Credentials are compared directly using strict equality (<code>===</code>).
+            </p>
+          </div>
+          <div class="flow-steps">
+            <div class="step"><span class="step-num">1</span><span>User enters credentials and clicks Sign In</span></div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="step"><span class="step-num">2</span><span>JS validates fields are non-empty using <code>focus()</code></span></div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="step"><span class="step-num">3</span><span>Credentials checked against stored values</span></div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="step"><span class="step-num">4a</span><span class="correct">Correct → redirect to about.html after 1s</span></div>
+            <div class="step"><span class="step-num">4b</span><span class="wrong">Wrong → decrement counter, show alert</span></div>
+            <div class="step-arrow">&#8595;</div>
+            <div class="step"><span class="step-num">5</span><span>After 3 failures → button &amp; inputs disabled</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="copyright">&copy; 2025 Vellore Institute of Technology &mdash; Student Portal</p>
+    </div>
+  </footer>
+
+</body>
+</html>
